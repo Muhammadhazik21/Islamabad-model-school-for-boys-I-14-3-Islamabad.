@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Apply Now - I-14/3 School</title>
+    <link rel="icon" type="image/x-icon" href="https://tse3.mm.bing.net/th/id/OIP.7RK-FZK0p710nsdDLwvypAHaHa?pid=Api&P=0&h=220">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        body{
+            background: #f5f7fa;
+            padding: 40px;
+        }
+
+        .container{
+            max-width: 900px;
+            background: white;
+            margin: 0 auto;
+            padding: 40px;
+            border-radius: 14px;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+        }
+
+        h2{
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 32px;
+            color: #002B5B;
+        }
+
+        p{
+            text-align: center;
+            margin-bottom: 35px;
+            font-size: 18px;
+            color: #555;
+        }
+
+        .form-group{
+            margin-bottom: 22px;
+        }
+
+        label{
+            font-size: 18px;
+            color: #002B5B;
+            font-weight: 600;
+        }
+
+        input, select, textarea{
+            width: 100%;
+            padding: 14px;
+            margin-top: 6px;
+            font-size: 17px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            outline: none;
+            transition: all .3s;
+        }
+
+        input:focus, select:focus, textarea:focus{
+            border-color: #002B5B;
+            box-shadow: 0 0 8px rgba(0,43,91,0.25);
+        }
+
+        textarea{
+            height: 130px;
+            resize: none;
+        }
+
+        .error{
+            color: red;
+            font-size: 15px;
+            margin-top: 4px;
+        }
+
+        .fake-btn{
+            background: #002B5B;
+            color: white;
+            padding: 16px;
+            border-radius: 10px;
+            text-align: center;
+            width: 100%;
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 10px;
+            cursor: pointer;
+            opacity: 0.9;
+        }
+
+        /* SUCCESS SCREEN */
+        #successScreen{
+            display: none;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .circle{
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: #4CAF50;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            box-shadow: 0 6px 25px rgba(0,0,0,0.2);
+        }
+
+        .circle span{
+            font-size: 90px;
+            color: white;
+            font-weight: bold;
+        }
+
+        #successScreen h1{
+            margin-top: 25px;
+            font-size: 36px;
+            color: #002B5B;
+        }
+
+        #successScreen p{
+            font-size: 20px;
+            color: #555;
+        }
+    </style>
+
+    <script>
+        function submitForm(){
+            let isValid = true;
+
+            function showError(id, message){
+                document.getElementById(id).innerText = message;
+                isValid = false;
+            }
+
+            // Clear old errors
+            let errors = document.getElementsByClassName("error");
+            for(let e of errors){ e.innerText = ""; }
+
+            let name = document.getElementById("name");
+            let email = document.getElementById("email");
+            let phone = document.getElementById("phone");
+            let program = document.getElementById("program");
+            let reason = document.getElementById("reason");
+
+            if(name.value.trim() === "") showError("errName", "Required");
+
+            if(email.value.trim() === ""){
+                showError("errEmail", "Required");
+            } else if(!email.value.includes("@") || !email.value.includes(".")){
+                showError("errEmail", "Incorrect email");
+            }
+
+            if(phone.value.trim() === ""){
+                showError("errPhone", "Required");
+            } else if(isNaN(phone.value)){
+                showError("errPhone", "Incorrect number");
+            }
+
+            if(program.value === "Select your program"){
+                showError("errProgram", "Required");
+            }
+
+            if(reason.value.trim() === "") showError("errReason", "Required");
+
+            if(!isValid) return;
+
+            // Show Success Screen
+            document.getElementById("applyForm").style.display = "none";
+            document.getElementById("successScreen").style.display = "block";
+        }
+    </script>
+
+</head>
+<body>
+
+<div class="container">
+
+    <!-- APPLY FORM -->
+    <div id="applyForm">
+
+        <h2>Apply Now</h2>
+        <p>Start your application to I-14/3 school by filling out the required details below.</p>
+
+        <div class="form-group">
+            <label>Full Name</label>
+            <input id="name" type="text" placeholder="Enter your full name">
+            <div id="errName" class="error"></div>
+        </div>
+
+        <div class="form-group">
+            <label>Email Address</label>
+            <input id="email" type="email" placeholder="Enter your email">
+            <div id="errEmail" class="error"></div>
+        </div>
+
+        <div class="form-group">
+            <label>Phone Number</label>
+            <input id="phone" type="text" placeholder="Enter your phone number">
+            <div id="errPhone" class="error"></div>
+        </div>
+
+        <div class="form-group">
+            <label>Select your class</label>
+            <select id="program">
+                <option value="">-- select class --</option>
+                <option>Class 1</option>
+                <option>Class 2</option>
+                <option>Class 3</option>
+                <option>Class 4</option>
+                <option>Class 5</option>
+                <option>Class 6</option>
+                <option>Class 7</option>
+                <option>Class 8</option>
+                <option>Class 9</option>
+                <option>Class 10</option>
+            </select>
+            <div id="errProgram" class="error"></div>
+        </div>
+
+        <div class="form-group">
+            <label>Why Do You Want to Apply?</label>
+            <textarea id="reason" placeholder="Write your interest or purpose..."></textarea>
+            <div id="errReason" class="error"></div>
+        </div>
+
+        <div class="fake-btn" onclick="submitForm()">Submit Application</div>
+
+    </div>
+
+
+    <!-- SUCCESS SCREEN -->
+    <div id="successScreen">
+        <div class="circle">
+            <span>✓</span>
+        </div>
+
+        <h1>Application Submitted</h1>
+        <p>Your application has been successfully received.</p>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Islamabad model school for boys (I-X) islamabad</title>
+<link rel="icon" type="image/x-icon" href="https://tse3.mm.bing.net/th/id/OIP.7RK-FZK0p710nsdDLwvypAHaHa?pid=Api&P=0&h=220">
+<meta name="description" content="Narrative-led university homepage prototype (mission & vision focused).">
+<style>
+  /* -------------------------
+     Basic Reset & Utilities
+     ------------------------- */
+  :root{
+    --brand-1: #0b63a3; /* primary */
+    --brand-2: #0fa3a3; /* accent */
+    --muted: #6b7280;
+    --bg: #f7f9fb;
+    --card: #ffffff;
+    --glass: rgba(255, 255, 255, 0.486);
+    --maxw: 1200px;
+    --radius: 12px;
+    --ff-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    font-family:var(--ff-sans);
+    background: linear-gradient(180deg,#f7fbff 0%, #f6f9f7 100%);
+    color:#0b1220;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    line-height:1.45;
+  }
+  a{color:inherit; text-decoration:none}
+  .container{max-width:var(--maxw); margin:0 auto; padding:0 20px}
+
+  /* -------------------------
+     Top Navigation
+     ------------------------- */
+  header{
+    background:transparent;
+    position:sticky;
+    top:0;
+    z-index:50;
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(11,18,32,0.06);
+  }
+  .nav-row{display:flex;align-items:center;justify-content:space-between;padding:18px 0;}
+  .brand{display:flex;gap:12px;align-items:center}
+  .logo{
+    width:48px;height:48px;border-radius:8px;background:linear-gradient(135deg,var(--brand-1),var(--brand-2));
+    display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:16px;
+    box-shadow:0 6px 18px rgba(18, 11, 32, 0.08);
+  }
+  nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0;font-weight:600}
+  nav a{color:var(--muted);padding:8px 10px;border-radius:8px}
+  nav a.cta{background:var(--brand-2);color:white;padding:8px 14px}
+
+  /* -------------------------
+     Hero / Narrative Area
+     ------------------------- */
+  .hero{
+    padding:48px 0 28px;
+    display:grid;
+    grid-template-columns: 1fr 420px;
+    gap:36px;
+    align-items:center;
+  }
+  .hero-left{padding:28px 0}
+  .kicker{display:inline-block;background:rgba(11,99,163,0.08);color:var(--brand-1);padding:6px 10px;border-radius:999px;font-weight:700;margin-bottom:14px}
+  h1{
+    font-size:36px;margin:0 0 10px;line-height:1.05;
+  }
+  .lead{color:var(--muted);margin-bottom:18px}
+  .mission-card{
+    background: linear-gradient(180deg, rgba(15,163,163,0.06), rgba(11,99,163,0.03));
+    padding:18px;border-radius:14px;display:flex;gap:14px;align-items:flex-start;
+    box-shadow: 0 8px 30px rgba(11,18,32,0.04);
+  }
+  .mission-card .icon{
+    width:64px;height:64px;border-radius:12px;background:var(--card);display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--brand-1);
+    font-size:22px;border:1px solid rgba(11,18,32,0.04)
+  }
+  .mission-text h3{margin:0;font-size:18px}
+  .mission-text p{margin:6px 0 0;color:var(--muted);font-size:15px}
+
+  .hero-ctas{display:flex;gap:12px;margin-top:18px}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:10px;font-weight:700;background:var(--brand-1);color:#fff}
+  .btn.ghost{background:transparent;color:var(--brand-1);border:2px solid rgba(11,99,163,0.08)}
+
+  /* Right column: imagery/story cards */
+  .hero-right{
+    display:grid;
+    gap:14px;
+    align-content:start;
+  }
+  .story{
+    background:var(--card);padding:14px;border-radius:12px;box-shadow:0 8px 20px rgba(11,18,32,0.04);display:flex;gap:12px;align-items:center;
+  }
+  .story img{width:76px;height:76px;border-radius:10px;object-fit:cover}
+  .story .smeta{font-weight:700}
+  .story p{margin:6px 0 0;color:var(--muted);font-size:14px}
+
+  /* -------------------------
+     Gateway Cards / Links
+     ------------------------- */
+  .gateways{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:36px 0}
+  .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(11,18,32,0.03);min-height:120px;display:flex;flex-direction:column;justify-content:space-between}
+  .card h4{margin:0 0 6px}
+  .card p{color:var(--muted);margin:0 0 12px;font-size:14px}
+  .card .small-cta{font-weight:700;color:var(--brand-1)}
+
+  /* -------------------------
+     Story section (mission + timeline)
+     ------------------------- */
+  .storyflow{display:grid;grid-template-columns:1fr 380px;gap:26px;align-items:start;margin-bottom:40px}
+  .storyflow .storycopy{background:linear-gradient(180deg, rgba(255,255,255,0.7), rgba(255,255,255,0.9)); padding:24px;border-radius:14px}
+  .stat {display:flex;gap:14px;align-items:center;margin-bottom:12px}
+  .stat .num{font-size:28px;font-weight:800;color:var(--brand-1)}
+  .story-visual{border-radius:14px;overflow:hidden;background:linear-gradient(135deg,var(--brand-1),var(--brand-2));min-height:260px;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;padding:18px}
+  .story-visual p{margin:0;font-weight:700}
+
+  /* -------------------------
+     Testimonials / Trust
+     ------------------------- */
+  .trust{display:flex;gap:12px;align-items:center;margin-bottom:28px}
+  .avatar{width:56px;height:56px;border-radius:999px;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-weight:700;color:var(--brand-1)}
+  .trust p{margin:0;color:var(--muted)}
+
+  /* -------------------------
+     Footer
+     ------------------------- */
+  footer{padding:28px 0;border-top:1px solid rgba(11,18,32,0.04);margin-top:40px}
+  .footer-grid{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+  /* -------------------------
+     Responsive
+     ------------------------- */
+  @media (max-width:1024px){
+    .hero{grid-template-columns:1fr 360px}
+    .hero{grid-template-columns:1fr 360px}
+    .gateways{grid-template-columns:repeat(2,1fr)}
+    .gateways{grid-template-columns:repeat(2,1fr)}
+    .storyflow{grid-template-columns:1fr}
+    .hero-right{grid-auto-rows:min-content}
+  }
+  @media (max-width:720px){
+    .nav-row{padding:12px 0}
+    nav ul{display:none}
+    .hero{grid-template-columns:1fr;gap:20px;padding:28px 0}
+    h1{font-size:26px}
+    .hero-right{order:2}
+    .hero-left{order:1}
+    .gateways{grid-template-columns:1fr}
+    .container{padding:0 16px}
+    .logo{width:44px;height:44px}
+    .story-visual{min-height:180px}
+  }
+
+  /* small helpers */
+  .muted{color:var(--muted)}
+  .pill{font-size:13px;padding:6px 10px;border-radius:999px;background:rgba(11,18,32,0.04);display:inline-block}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav-row">
+    <div class="brand">
+      <div class="logo">I-14/3</div>
+      <div>
+        <div style="font-weight:800">Islamabad model school for boys I-14/3 (I-X) islamabad</div>
+        <div class="muted" style="font-size:13px">Neutral Transformation & Digital Admissions</div>
+      </div>
+    </div>
+
+    <nav>
+        <a href="overview-.html" class="btn-secondary">Overview</a>
+        <a href="module-.html" class="btn-secondary">Modules</a>
+        <a href="enroll-.html" class="btn-secondary">Enroll Now</a>
+       <a href="contact-.html" class="btn-secondary">Contact</a> 
+        <a href="support - Copy.html" class="btn-secondary">Support</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <!-- HERO -->
+  <section class="hero" aria-label="Hero: mission and navigation">
+    <div class="hero-left">
+      <span class="kicker">Mission-led redesign</span>
+      <h1>Empowering Minds through Conceptual Excellence: Building the Foundation for Tomorrow's Leaders.</h1>
+      <p class="lead">Our core focus is your school success. Combining expert teaching with regular assessments, we provide the perfect environment for students to excel in board exams and beyond.</p>
+
+      <div class="mission-card" aria-hidden="false">
+        <div class="icon">M</div>
+        <div class="mission-text">
+          <h3>Mission (center stage)</h3>
+          <p>To empower students with deep conceptual knowledge and rigorous practice, ensuring they achieve top grades and secure their future in leading collages and universities.</p>
+        </div>
+      </div>
+
+      <div class="hero-ctas">
+        <a class="btn" href="inovation - Copy.html">Innovation Lab</a>
+        <a class="btn ghost" href="student hub - Copy.html">Student Hub</a>
+      </div>
+
+      <!-- Trust / quick stats -->
+      <div style="display:flex;gap:14px;margin-top:18px;align-items:center">
+        <div class="stat" style="flex-direction:column;align-items:flex-start">
+          <div class="num">1k+</div>
+          <div class="muted">Students enrolled</div>
+        </div>
+        <div class="stat" style="flex-direction:column;align-items:flex-start">
+          <div class="num">120+</div>
+          <div class="muted">Programs</div>
+        </div>
+      </div>
+    </div>
+
+    <aside class="hero-right" aria-hidden="false">
+      <div class="story">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDtgaeBBae6jHNAMpH5-c8t5FWmJWNkXA_SMB0lY-6ChB4j__DTHFOeKCHiRHy3LGPiJM&usqp=CAU" alt="students" />
+        <div>
+          <div class="smeta">Computer's LAB</div>
+          <p>How our community-engaged research shifted local education outcomes in 2026.</p>
+        </div>
+      </div>
+
+      <div class="story">
+        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=60&auto=format&fit=crop" alt="lab" />
+        <div>
+          <div class="smeta">Research spotlight</div>
+          <p>Faculty-led research creates tools for climate resilience.</p>
+        </div>
+      </div>
+
+    </aside>
+  </section>
+
+  <!-- GATEWAYS -->
+  <section class="gateways" aria-label="Primary gateways">
+    <div class="card">
+      <div>
+        <h4>Future Tracks</h4>
+        <p class="muted">At I-14/3 school, Career Pathways equips students with guidance, internships, and job opportunities. It bridges academic learning with real-world experience, offering mentorship, workshops, and networking. Students develop skills, explore career options, and gain insights to build successful, fulfilling professional journeys after graduation.</p>
+      </div>
+      <div><a class="small-cta" href="carrer-.html">Career Pathways</a></div>
+    </div>
+
+    <div class="card">
+      <div>
+        <h4>Experience Zone</h4>
+        <p class="muted">The Events & Workshops module showcases seminars, competitions, guest lectures, and hands-on sessions. Students participate actively, enhancing knowledge, collaboration, and leadership. These interactive experiences foster creativity, skill development, and networking, ensuring students remain engaged and prepared for both school and professional challenges while exploring diverse fields.</p>
+      </div>
+         <div><a class="small-cta" href="Experience Zone-.html">Events & Workshops </a></div>
+    </div>
+
+    <div class="card">
+      <div>
+        <h4>Discovery Lab</h4>
+        <p class="muted">Research & Impact highlights the school's contributions to technology, society, and innovation. Students and faculty collaborate on interdisciplinary projects, publications, and social initiatives. By documenting measurable outcomes, breakthroughs, and practical applications, this module demonstrates how I-14/3 school advances knowledge, drives progress, and empowers students to make a meaningful impact.</p>
+      </div>
+      <div><a class="small-cta" href="acivement-.html">Achievements</a></div>
+    </div>
+  </section>
+
+  <!-- STORYFLOW: mission + visual -->
+  <section class="storyflow" aria-label="Mission narrative flow">
+    <div class="storycopy">
+      <h3>Mission first: school flow</h3>
+      <p class="muted">We structure the homepage so the mission/vision appear early and are reinforced with images and gateway actions. Copy is short, scannable, and paired with visuals that evoke the brand.</p>
+
+      <div style="margin-top:18px">
+        <div class="stat">
+          <div class="num">Our Mission</div>
+          <div class="muted" style="margin-left:8px">Prepare leaders with real-world experience</div>
+        </div>
+
+        <div class="stat">
+          <div class="num">Our Vision</div>
+          <div class="muted" style="margin-left:8px">A school embedded in society's solutions</div>
+        </div>
+      </div>
+
+      <div style="margin-top:14px">
+        <a class="btn" href="apply-.html">Apply Now</a>
+      </div>
+    </div>
+
+    <div class="story-visual" role="img" aria-label="Mission visual">
+      <div style="opacity:0.95">
+        <p style="font-size:18px">A visual module that reflects the brand — swap to brand-approved photography or illustration.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section style="margin-bottom:18px">
+    <div class="trust">
+      <div class="avatar">AK</div>
+      <div>
+        <div style="font-weight:700">Alumni testimony</div>
+        <p class="muted">"The curriculum and community shifted how I think about solving problems — that promise is visible from the homepage."</p>
+      </div>
+      </div>
+      </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div style="max-width:560px">
+        <div style="font-weight:800">Islamabad model school for boys I-14/3 islamabad</div>
+        <div class="muted" style="margin-top:6px">© 2026 I-14/3 school Designed for bio,tech,engineer,IoT and mathematicians</div>
+      </div>
+      </div>
+    </div>
+</div>
+  </footer>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>School Contact</title>
+    <link rel="icon" type="image/x-icon" href="https://tse3.mm.bing.net/th/id/OIP.7RK-FZK0p710nsdDLwvypAHaHa?pid=Api&P=0&h=220">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        body {
+            background: #f2f5f9;
+            color: #333;
+        }
+
+        .header {
+            background: #002B5B;
+            padding: 30px;
+            text-align: center;
+            color: white;
+            font-size: 32px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 40px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        .box {
+            background: #e9f1fb;
+            padding: 22px;
+            border-left: 5px solid #002B5B;
+            border-radius: 6px;
+            margin-bottom: 25px;
+        }
+
+        .sub-title {
+            font-size: 22px;
+            color: #002B5B;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .input-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 6px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        textarea {
+            height: 120px;
+            resize: none;
+        }
+
+        .btn {
+            width: 100%;
+            background: #002B5B;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+
+        .btn:hover{
+            background: #01427a;
+        }
+
+        /* Success Page Style */
+        #successBox {
+            display: none;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .tick {
+            font-size: 120px;
+            color: green;
+            font-weight: bold;
+        }
+
+        h1 {
+            margin-top: 20px;
+            font-size: 30px;
+            color: #333;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 15px;
+            font-size: 14px;
+            color: #555;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="header">Contact Us</div>
+
+<div class="container">
+
+    <!-- PAGE 1 (FORM) -->
+    <div id="formBox">
+        <h2>Get In Touch With Us</h2>
+        <p>
+            Have questions about admissions, programs, or school processes? 
+            Feel free to reach out using the details below or fill out the contact form. 
+            We are here to assist you.
+        </p>
+
+        <div class="box">
+            <div class="sub-title">University Contact Information</div>
+            <p><strong>Phone:</strong> +92 322 5390964</p>
+            <p><strong>Email:</strong> muhammadhazik.web.developer@gmail.com</p>
+            <p><strong>Address:</strong> Main peshawar Road, Rawalpindi, Pakistan</p>
+        </div>
+
+        <div class="box">
+            <div class="sub-title">Send Us a Message</div>
+
+            <div class="input-group">
+                <label>Your Name</label>
+                <input type="text" id="name">
+            </div>
+            <div class="input-group">
+                <label>Your Email</label>
+                <input type="email" id="email">
+            </div>
+            <div class="input-group">
+                <label>Subject</label>
+                <input type="text" id="subject">
+            </div>
+            <div class="input-group">
+                <label>Your Message</label>
+                <textarea id="message"></textarea>
+            </div>
+
+            <button class="btn" onclick="showSuccess()">Send Message</button>
+        </div>
+    </div>
+
+    <!-- PAGE 2 (SUCCESS) -->
+    <div id="successBox" class="box">
+        <div class="tick">✓</div>
+        <h1>Message Sent Successfully</h1>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 School Project — Contact Page
+</footer>
+
+<script>
+function showSuccess() {
+    document.getElementById("formBox").style.display = "none";
+    document.getElementById("successBox").style.display = "block";
+}
+</script>
+
+</body>
+</html>

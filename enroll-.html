@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>School Project - Enroll</title>
+    <link rel="icon" type="image/x-icon" href="https://tse3.mm.bing.net/th/id/OIP.7RK-FZK0p710nsdDLwvypAHaHa?pid=Api&P=0&h=220">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        body{
+            background: #f5f7fa;
+            color: #333;
+        }
+
+        .header{
+            background: #002B5B;
+            padding: 30px 40px;
+            color: white;
+            font-size: 32px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .container{
+            max-width: 950px;
+            margin: 40px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        h2{
+            color: #002B5B;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        p{
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .enroll-box{
+            background: #e9f1fb;
+            padding: 25px;
+            border-left: 5px solid #002B5B;
+            border-radius: 6px;
+            margin-bottom: 25px;
+        }
+
+        .input-group{
+            margin-bottom: 20px;
+        }
+
+        label{
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        .error{
+            color: red;
+            margin-top: 6px;
+            font-size: 14px;
+            display: none;
+        }
+
+        .submit-btn {
+            background: #002B5B;
+            color: white;
+            padding: 14px;
+            border-radius: 8px;
+            width: 100%;
+            text-align: center;
+            font-size: 18px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            background: #01386d;
+        }
+
+        .thank-you {
+            text-align: center;
+            padding: 50px;
+            font-size: 24px;
+            color: #002B5B;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">Enroll Now</div>
+
+<div class="container" id="formContainer">
+
+    <h2>Enrollment Form</h2>
+
+    <div class="enroll-box">
+
+        <div class="input-group">
+            <label>Full Name</label>
+            <input type="text" id="name">
+            <div class="error" id="nameError">Required</div>
+        </div>
+
+        <div class="input-group">
+            <label>Email Address</label>
+            <input type="email" id="email">
+            <div class="error" id="emailError">Required</div>
+        </div>
+
+        <div class="input-group">
+            <label>Phone Number</label>
+            <input type="text" id="phone">
+            <div class="error" id="phoneError">Required</div>
+        </div>
+
+        <div class="input-group">
+            <label>Select your class</label>
+            <select id="program">
+                <option value="">-- select class --</option>
+                <option>Class 1</option>
+                <option>Class 2</option>
+                <option>Class 3</option>
+                <option>Class 4</option>
+                <option>Class 5</option>
+                <option>Class 6</option>
+                <option>Class 7</option>
+                <option>Class 8</option>
+                <option>Class 9</option>
+                <option>Class 10</option>
+            </select>
+            <div class="error" id="progError">Required</div>
+        </div>
+
+        <div class="input-group">
+            <label>City</label>
+            <input type="text" id="city">
+            <div class="error" id="cityError">Required</div>
+        </div>
+
+        <button class="submit-btn" onclick="submitForm()">Submit Enrollment</button>
+    
+    </div>
+</div>
+
+<script>
+function submitForm(){
+
+    let valid = true;
+
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let phone = document.getElementById("phone").value.trim();
+    let program = document.getElementById("program").value.trim();
+    let city = document.getElementById("city").value.trim();
+
+    if(name === ""){
+        document.getElementById("nameError").style.display = "block";
+        valid = false;
+    } else { document.getElementById("nameError").style.display = "none"; }
+
+    if(email === ""){
+        document.getElementById("emailError").style.display = "block";
+        valid = false;
+    } else { document.getElementById("emailError").style.display = "none"; }
+
+    if(phone === ""){
+        document.getElementById("phoneError").style.display = "block";
+        valid = false;
+    } else { document.getElementById("phoneError").style.display = "none"; }
+
+    if(program === ""){
+        document.getElementById("progError").style.display = "block";
+        valid = false;
+    } else { document.getElementById("progError").style.display = "none"; }
+
+    if(city === ""){
+        document.getElementById("cityError").style.display = "block";
+        valid = false;
+    } else { document.getElementById("cityError").style.display = "none"; }
+
+    if(valid){
+        // Form submit hone ke baad naya content dikhao
+        document.getElementById("formContainer").innerHTML = `
+            <div class="thank-you">
+                <h2>Thank You for Enrolling!</h2>
+                <p>Your enrollment for <strong>${program}</strong> has been received.</p>
+                <p>We will contact you at <strong>${email}</strong> soon.</p>
+            </div>
+        `;
+    }
+}
+</script>
+
+</body>
+</html>
